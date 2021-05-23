@@ -13,9 +13,8 @@ const products = [
   },
 ];
 
-const sale = products.map(function (product) {
+products.forEach(function (product) {
   product.price *= 0.85;
-  return product;
 });
 
-console.log(sale);
+console.log(products);
