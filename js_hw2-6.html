@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function main() {
+        const ammount = prompt(`Какую сумму вы хотите перевести?`);
+
+        if (isNaN(parseInt(ammount))) {
+          alert(`Вы ввели неправильное число`);
+          return;
+        }
+
+        const lastDigit = ammount[ammount.length - 1];
+
+        let suffix = null;
+        if (lastDigit == 1) {
+          suffix = "ь";
+        } else if (lastDigit == 2 || lastDigit == 3 || lastDigit == 4) {
+          suffix = "я";
+        } else {
+          suffix = "ей";
+        }
+
+        alert(`Ваша сумма в ${ammount} рубл${suffix} успешно зачислена.`);
+      }
+
+      main();
+    </script>
+  </body>
+</html>

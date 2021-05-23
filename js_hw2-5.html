@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        const add = function (arg1,arg2) {
+            return arg1 + arg2;
+        }
+
+        const sub = function (arg1,arg2) {
+            return arg1 - arg2;
+        }
+
+        const mul = function (arg1,arg2) {
+            return arg1 * arg2;
+        }
+
+        const div = function (arg1,arg2) {
+            return arg1 / arg2;
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            
+            switch (operation) {
+                case `+`:
+                    return add(arg1, arg2);
+                case `-`:
+                    return sub(arg1, arg2);
+                case `*`:
+                    return mul(arg1, arg2);
+                case `/`:
+                    return div(arg1, arg2);
+                default:
+                    return NaN;
+            }
+
+        }
+
+        const arg1 = parseInt(prompt("Введите первое число"));
+        const arg2 = parseInt(prompt("Введите второе число"));
+        const operation = prompt("Какую операцию выполнить? Наберите +, -, * или /");
+        const result = mathOperation(arg1, arg2, operation);
+
+        if (isNaN(result)) {
+            alert (`Вы ввели неправильное значение`);
+        }
+        else {
+            alert(`${arg1} ${operation} ${arg2} = ${result}`);
+        }
+
+        
+    </script>
+    
+</body>
+</html>
