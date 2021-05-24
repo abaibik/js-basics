@@ -26,5 +26,5 @@ const productsWithPhotoProp = products.filter((product) =>
 const productsWithPhotos = productsWithPhotoProp.filter(
   (product) => product.photos.length > 0
 );
-const result = productsWithPhotos.sort((a, b) => a.price - b.price);
+const result = products.sort((a, b) => a.price - b.price);
 console.log(result);
