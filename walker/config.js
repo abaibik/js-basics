@@ -4,6 +4,6 @@
  * @property {int} colsCount Количество колонок в карте.
  */
 const config = {
-    rowsCount: 10,
-    colsCount: 10,
+  rowsCount: 10,
+  colsCount: 10,
 };
