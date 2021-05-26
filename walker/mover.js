@@ -5,13 +5,13 @@ let mover = {
    */
   getDirection() {
     // Доступные значения ввода.
-    const availableDirections = [2, 4, 6, 8];
+    const availableDirections = [1, 2, 3, 4, 6, 7, 8, 9];
 
     while (true) {
       // Получаем от пользователя направление.
       let direction = parseInt(
         prompt(
-          'Введите число (2, 4, 6 или 8), куда вы хотите переместиться, "Отмена" для выхода.'
+          'Введите число (1, 2, 3, 4, 6, 7, 8 или 9), куда вы хотите переместиться, "Отмена" для выхода.'
         )
       );
       if (isNaN(direction)) {
@@ -20,7 +20,9 @@ let mover = {
       // Если направление не одно из доступных, то сообщаем что надо ввести корректные данные
       // и начинаем новую итерацию.
       if (!availableDirections.includes(direction)) {
-        alert("Для перемещения необходимо ввести одно из чисел 2, 4, 6 или 8.");
+        alert(
+          "Для перемещения необходимо ввести одно из чисел 1, 2, 3, 4, 6, 7, 8 или 9."
+        );
         continue;
       }
 
@@ -42,9 +44,24 @@ let mover = {
     };
     // Определяем направление и обновляем местоположение игрока в зависимости от направления.
     switch (direction) {
+      case 1:
+        if (nextPosition.y !== config.rowsCount - 1 && nextPosition.x !== 0) {
+          nextPosition.y++;
+          nextPosition.x--;
+        }
+        break;
       case 2:
         if (nextPosition.y !== config.rowsCount - 1) {
           nextPosition.y++;
+        }
+        break;
+      case 3:
+        if (
+          nextPosition.y !== config.rowsCount - 1 &&
+          nextPosition.x !== config.colsCount - 1
+        ) {
+          nextPosition.y++;
+          nextPosition.x++;
         }
         break;
       case 4:
@@ -57,11 +74,22 @@ let mover = {
           nextPosition.x++;
         }
         break;
+      case 7:
+        if (nextPosition.x !== 0 && nextPosition.y !== 0) {
+          nextPosition.y--;
+          nextPosition.x--;
+        }
+        break;
       case 8:
         if (nextPosition.y !== 0) {
           nextPosition.y--;
         }
-
+        break;
+      case 9:
+        if (nextPosition.x !== config.colsCount - 1 && nextPosition.y !== 0) {
+          nextPosition.y--;
+          nextPosition.x++;
+        }
         break;
     }
 
