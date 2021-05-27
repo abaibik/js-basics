@@ -9,8 +9,14 @@
     <script src="player.js"></script>
     <script src="game.js"></script>
     <script>
-      const game = new Game();
-      game.run();
+      alert(
+        'Вас приветсвует игра "Кто хочет стать миллиардером"!\n' +
+          "Откиньтесь на спинку кресла и приготовьтесь отвечать на вопросы."
+      );
+      do {
+        const game = new Game();
+        game.run();
+      } while (prompt("Хотите сыграть ещё раз?") === "да");
     </script>
   </body>
 </html>
