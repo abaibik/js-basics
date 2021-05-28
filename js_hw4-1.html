@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function main() {
+        const number = +prompt("Введите целое число в диапазоне [0, 999]");
+        if (isNaN(number)) {
+          console.log("Это не число");
+          return {};
+        }
+        if (number < 0 || number > 999) {
+          console.log("Число вне диапазона [0, 999]");
+          return {};
+        }
+        if (!Number.isInteger(number)) {
+          console.log("Это не целое число");
+          return {};
+        }
+        const hundreds = Math.floor(number / 100);
+        const tens = Math.floor((number - hundreds * 100) / 10);
+        const units = number - hundreds * 100 - tens * 10;
+
+        return {
+          units: units,
+          tens: tens,
+          hundreds: hundreds,
+        };
+      }
+
+      console.log(main());
+    </script>
+  </body>
+</html>
