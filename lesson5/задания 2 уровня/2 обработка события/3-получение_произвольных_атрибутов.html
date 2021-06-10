@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      текст
+    </div>
+
+    <!-- 
+    Задание.
+    1. Сохраните ссылку на div в переменную
+    2. Назначьте div'у обработку клика, у функции-обработчика объявите параметр event.
+    3. При клике из event.target c помощью getAttribute() получите значение
+    каждого атрибута и выведите в консоль.
+    -->
+
+    <script>
+      "use strict";
+
+      const div = document.querySelector("div");
+
+      const attributes = [];
+      const attClass = attributes.push(div.getAttribute("class"));
+      const attId = attributes.push(div.getAttribute("id"));
+      const attTabindex = attributes.push(div.getAttribute("tabindex"));
+      const attAriaLabelledby = attributes.push(
+        div.getAttribute("aria-labelledby")
+      );
+      const attAriaHidden = attributes.push(div.getAttribute("aria-hidden"));
+
+      div.addEventListener("click", function (event) {
+        attributes.forEach((attribute) => {
+          console.log(attribute);
+        });
+      });
+    </script>
+  </body>
+</html>
