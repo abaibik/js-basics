@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="questions.js"></script>
+    <script src="player.js"></script>
+    <script src="game.js"></script>
+    <script>
+      alert(
+        'Вас приветсвует игра "Кто хочет стать миллиардером"!\n' +
+          "Откиньтесь на спинку кресла и приготовьтесь отвечать на вопросы."
+      );
+      do {
+        const game = new Game();
+        game.run();
+      } while (prompt("Хотите сыграть ещё раз?") === "да");
+    </script>
+  </body>
+</html>
